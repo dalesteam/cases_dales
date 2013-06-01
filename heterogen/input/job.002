@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH -t 4:00:00
+#SBATCH -n 32
+#SBATCH -e errorfile.002
+#SBATCH -o errorfile.002
+iexpnr=002
+
+workdir=`pwd`
+rm -rf tmpdir.$iexpnr
+mkdir tmpdir.$iexpnr
+
+ulimit -s unlimited
+cp dales4 *inp.$iexpnr namoptions.$iexpnr tmpdir.$iexpnr/
+cd tmpdir.$iexpnr
+srun ./dales4 namoptions.$iexpnr >output.$iexpnr
+
+mkdir ${workdir}/R${iexpnr}
+mv * ${workdir}/R${iexpnr}
+cd $workdir
+rm -r tmpdir.$iexpnr
