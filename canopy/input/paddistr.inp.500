@@ -1,0 +1,14 @@
+# Input file - relative weighing for plant area densities at half levels 
+# First line is PAD at the surface, last line is PAD at canopy top
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+0.875
+0.5
+0.125
+0.0
