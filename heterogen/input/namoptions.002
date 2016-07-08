@@ -1,22 +1,22 @@
 &RUN
 iexpnr     =  002
 lwarmstart =  .false.
-runtime    =  14400 
-trestart   =  36000 
+runtime    =  14400
+trestart   =  36000
 dtmax      =  1
 ladaptive  = .true.
 courant    =  1.
 irandom    =  43
 randthl    =  0.1
 randqt     =  2.5e-5
-nsv        =  20 
-timeav_glob= 60. 
+nsv        =  20
+timeav_glob= 60.
 /
 
 &DOMAIN
-imax       = 64 
-jtot       = 128 
-kmax       = 128 
+itot       = 64
+jtot       = 128
+kmax       = 128
 
 xsize      = 6400.
 ysize      = 12800.
@@ -49,7 +49,7 @@ wqsurf     =  0.1e-3
 wsvsurf(1) =  1.0
 wsvsurf(2) =  0.0
 wsvsurf(3) =  0.0
-wsvsurf(4) =  0.0005 
+wsvsurf(4) =  0.0005
 wsvsurf(5) =  0.0
 wsvsurf(6) =  0.0
 wsvsurf(7) =  0.0
@@ -139,7 +139,7 @@ lchem       = .true.
 tnor        = 25
 firstchem   = 1
 lastchem    = 20
-ldiuvar     = .false. 
+ldiuvar     = .false.
 lchconst    = .false.
 h_ref       = 12.
 lcloudKconst= .false.
