@@ -1,0 +1,157 @@
+&RUN
+iexpnr     =  500
+lwarmstart =  .false.
+startfile  = 'initd00h24mxxx     .122'
+runtime    =  2400
+trestart   =  14400
+dtmax      =  0.2
+ladaptive  = .true.
+courant    =  0.63
+irandom    =  42
+randthl    =  0.0
+randqt     =  0.0e-5
+nsv        =  1 ! 24 
+timeav_glob= 1. 
+krandumin  = 17
+krandumax  = 24
+randu      = 0.5
+nprocx     = 16
+nprocy     = 32
+/
+
+&DOMAIN
+itot       = 1024
+jtot       = 1024
+kmax       = 128
+ksp        = 128
+
+xsize      = 1024.
+ysize      = 1024.
+
+xlat       =  -2.612
+xlon       = -60.910
+xday       = 263.
+xtime      =  9.00
+/
+&NAMSURFACE
+lmostlocal    = .true.
+z0mav         = 0.0038
+z0hav         = 0.0038
+lhetero       = .false.
+lneutral      = .true.
+/
+
+&NAMCANOPY
+lcanopy    =  .true.
+ncanopy    =  11
+cd         =  0.675
+lai        =  0.478723404255319
+lpaddistr  =  .true.
+npaddistr  =  12
+/
+
+&PHYSICS
+z0         =  0.0038
+ustin      =  0.1
+ps         =  100000.00
+thls       =  300.
+wtsurf     =  0.0
+wqsurf     =  0.0
+wsvsurf(1) =  1.0
+lmoist     =  .true.
+isurf      =  4
+irad       =  0
+timerad    =  3600
+lcoriol    =  .false.
+lrigidlid  =  .true.
+igrw_damp  =  -1
+unudge     =  0.9
+/
+
+&DYNAMICS
+llsadv     =  .false.
+lqlnr      =  .false.
+cu         =   0.
+cv         =   0.
+
+iadv_mom    =  52
+iadv_tke    =  52
+iadv_thl    =  52
+iadv_qt     =  52
+iadv_sv     =  100*7
+
+ibas_prf   =  2
+/
+
+&NAMHETEROSTATS
+dtav         = 10
+lheterostats = .true.
+/
+
+&NAMCHECKSIM
+tcheck      =  0
+/
+
+&NAMSAMPLING
+lsampcl     = .false. !< switch for conditional sampling cloud (on/off)
+lsampco     = .false. !< switch for conditional sampling core (on/off)
+lsampup     = .false. !< switch for conditional sampling updraft (on/off)
+lsampbuup   = .false. !< switch for conditional sampling buoyant updraft (on/off)
+lsampcldup  = .false. !<switch for condtional sampling cloudy updraft (on/off)
+dtav        = 60
+timeav      = 60
+/
+&NAMQUADRANT
+lquadrant   = .true.
+dtav        = 1
+hole        = 0.0
+iwind       = 1
+klow        = 1
+khigh       = 21
+/
+&NAMTIMESTAT
+ltimestat   = .false.
+iblh_meth   = 2
+iblh_var    = -1
+dtav        = 10
+/
+&NAMCROSSSECTION
+lcross      = .false.
+dtav        = 60
+/
+&NAMGENSTAT
+lstat       = .true.
+dtav        = 1
+/
+&NAMFIELDDUMP
+lfielddump  = .false.
+dtav        = 4
+ldiracc     = .false.
+/
+&NAMSTATTEND
+dtav        = 60
+ltend       = .false.
+/
+&NAMNETCDFSTATS
+lnetcdf     = .true.
+/
+&NAMNETCDFMOVIE
+lnetcdfmovie = .false.
+/
+&NAMCHEM
+lchem       = .false. ! .true.
+tnor        = 30
+firstchem   = 1
+lastchem    = 24
+ldiuvar     = .false. 
+lchconst    = .false.
+h_ref       = 12.
+lcloudKconst= .false.
+t_ref	    = 300.
+p_ref	    = 100000.
+q_ref	    = 5.0e-3
+lchmovie    = .false.
+dtchmovie   = 60.
+lsegr       = .true.
+/
+

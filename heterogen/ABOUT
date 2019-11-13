@@ -1,0 +1,7 @@
+This case uses both chemistry and heterogeneous (prescribed) surface forcings
+
+The numerical experiment (002) is based on the HET numerical experiment presented by Ouwersloot et al. (2011) (http://www.atmos-chem-phys.net/11/10681/2011/acp-11-10681-2011.html)
+To make it a faster run, the horizontal resolution is made more coarse (from 50 m to 100 m) and the horizontal direction over which is averaged for statistics is halved. This leads to 8 times less grid points
+Results can be comparable to those presented in the reference paper or, in more detail, using the data provided in the output folder
+
+Note that there will be slight differences (e.g. in resolved TKE) due to decreased resolution and lowered domain size (in x-direction)

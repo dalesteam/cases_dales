@@ -3,7 +3,7 @@ iexpnr     =  001
 lwarmstart =  .false.
 startfile  =  'initd00h01m000.001'
 runtime    =  7200
-trestart   =  3600 
+trestart   =  3600
 ladaptive  =  .true.
 irandom    =  43
 randthl    =  0.1
@@ -12,7 +12,7 @@ nsv        =  2
 /
 
 &DOMAIN
-imax       =  64 
+itot       =  64
 jtot       =  64
 kmax       =  96
 
@@ -53,8 +53,8 @@ phiwav(3)    = 0.3
 phiwav(4)    = 0.3
 
 rootfav(1)   = 0.35
-rootfav(2)   = 0.38 
-rootfav(3)   = 0.23 
+rootfav(2)   = 0.38
+rootfav(3)   = 0.23
 rootfav(4)   = 0.04
 
 lmostlocal   = .false.

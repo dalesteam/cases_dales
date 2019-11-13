@@ -1,0 +1,32 @@
+# @ shell=/bin/bash
+#
+# @ error = errorfile.500
+# @ output = outputfile.500
+# @ job_type = parallel
+# @ node_usage= not_shared
+# @ node = 32
+# @ tasks_per_node = 16
+# @ resources = ConsumableCpus(1)
+# @ network.MPI = sn_all,not_shared,us
+# @ wall_clock_limit = 24:00:00
+# @ notification = always
+# @ notify_user = $(user)@rzg.mpg.de
+# @ queue
+
+# run the program
+workdir=`pwd`
+iexpnr=500
+
+rm -rf /ptmp/${USER}/R$iexpnr
+mkdir /ptmp/${USER}/R$iexpnr
+
+cp dales4.1_21August *inp.$iexpnr namoptions.$iexpnr /ptmp/${USER}/R$iexpnr
+
+cd /ptmp/${USER}/R$iexpnr
+poe ./dales4.1_21August namoptions.$iexpnr >output.$iexpnr
+
+mkdir ${workdir}/R${iexpnr}
+mv * ${workdir}/R${iexpnr}
+cd $workdir
+
+rm -rf /ptmp/${USER}/R$iexpnr
